@@ -4,3 +4,4 @@ Project features:
 - TextField (KeyboardOptions, imeAction, leadingIcon)
 - Switch
 - Scroll support
+- Testing (local)
