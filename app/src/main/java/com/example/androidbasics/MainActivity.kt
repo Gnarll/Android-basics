@@ -68,12 +68,12 @@ fun DogItem(
     modifier: Modifier = Modifier
 ) {
     Card(
-        modifier = modifier
+        modifier = modifier,
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(dimensionResource(id = R.dimen.padding_small))
+                .padding(dimensionResource(id = R.dimen.padding_small)),
         ) {
             DogIcon(dog.imageResourceId)
             DogInformation(dog.name, dog.age)
@@ -104,10 +104,12 @@ fun DogInformation(
 ) {
     Column(modifier = modifier) {
         Text(
+            style = MaterialTheme.typography.displayMedium,
             text = stringResource(dogName),
             modifier = Modifier.padding(top = dimensionResource(R.dimen.padding_small))
         )
         Text(
+            style = MaterialTheme.typography.bodyLarge,
             text = stringResource(R.string.years_old, dogAge),
         )
     }
