@@ -4,14 +4,19 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.consumeWindowInsets
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androidbasics.ui.theme.AndroidBasicsTheme
+import com.example.androidbasics.model.HeroesRepository
+import com.example.compose.AndroidBasicsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,29 +24,41 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AndroidBasicsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                SuperHeroApp()
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun SuperHeroApp() {
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(
+                title = {
+                    Text(
+                        text = stringResource(R.string.top_app_bar_text),
+                        style = MaterialTheme.typography.displayLarge,
+                    )
+                }
+            )
+        }
+    ) { it ->
+        HeroList(
+            heroes = HeroesRepository.heroes,
+            modifier = Modifier
+                .padding(it)
+                .consumeWindowInsets(it)
+        )
+
+    }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+@Preview(showBackground = true)
+fun SuperHeroAppPreview() {
     AndroidBasicsTheme {
-        Greeting("Android")
+        SuperHeroApp()
     }
 }

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Android basics</string>
 
+    <string name="top_app_bar_text">Superheroes</string>
     <string name="hero1">Nick the Night and Day</string>
     <string name="description1">The Jetpack Hero</string>
     <string name="hero2">Reality Protector</string>
