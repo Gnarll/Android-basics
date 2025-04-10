@@ -1,2 +1,4 @@
 Project features
-- overrided in other branches
+
+- Activity lifecycle and it's methods
+- remember Savable
