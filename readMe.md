@@ -1,2 +1,6 @@
 Project features
-- overrided in other branches
+
+- MVVM pattern
+- ModelView
+- StateFlow
+- Alert dialog
