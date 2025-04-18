@@ -1,4 +1,4 @@
 Project features
 
 - Activity lifecycle and it's methods
-- remember Saveable
+- remember Saveable (replaced with ViewModel in this commit)
