@@ -37,8 +37,12 @@ fun SelectOptionScreen(
     subtotal: String,
     options: List<String>,
     onSelectionChanged: (String) -> Unit = {},
+    onCancelButtonClicked: () -> Unit,
+    onNextButtonClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    // notable fact: selectedValue is used here just for local state management,
+    // while the onSelectionChanged fun exposes exactly the same value to the viewModel
     var selectedValue by rememberSaveable { mutableStateOf("") }
 
     Column(
@@ -90,7 +94,7 @@ fun SelectOptionScreen(
         ) {
             OutlinedButton(
                 modifier = Modifier.weight(1f),
-                onClick = {}
+                onClick = onCancelButtonClicked,
             ) {
                 Text(stringResource(R.string.cancel))
             }
@@ -98,7 +102,7 @@ fun SelectOptionScreen(
                 modifier = Modifier.weight(1f),
                 // the button is enabled when the user makes a selection
                 enabled = selectedValue.isNotEmpty(),
-                onClick = {}
+                onClick = onNextButtonClicked
             ) {
                 Text(stringResource(R.string.next))
             }
@@ -106,13 +110,15 @@ fun SelectOptionScreen(
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun SelectOptionPreview() {
     AndroidBasicsTheme {
         SelectOptionScreen(
             subtotal = "299.99",
             options = listOf("Option 1", "Option 2", "Option 3", "Option 4"),
+            onCancelButtonClicked = {},
+            onNextButtonClicked = {},
             modifier = Modifier.fillMaxHeight()
         )
     }
