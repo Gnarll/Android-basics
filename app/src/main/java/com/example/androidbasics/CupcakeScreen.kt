@@ -39,7 +39,7 @@ import com.example.androidbasics.ui.StartOrderScreen
 
 enum class CupcakeScreen(@StringRes val title: Int) {
     Start(title = R.string.app_name),
-    Flavour(title = R.string.choose_flavor),
+    Flavor(title = R.string.choose_flavor),
     Pickup(title = R.string.choose_pickup_date),
     Summary(title = R.string.order_summary)
 }
@@ -105,7 +105,7 @@ fun CupcakeApp(
                     quantityOptions = DataSource.quantityOptions,
                     onNextButtonClicked = {
                         viewModel.setQuantity(it)
-                        navController.navigate(CupcakeScreen.Flavour.name)
+                        navController.navigate(CupcakeScreen.Flavor.name)
                     },
                     modifier = Modifier
                         .fillMaxSize()
@@ -115,7 +115,7 @@ fun CupcakeApp(
                 )
 
             }
-            composable(route = CupcakeScreen.Flavour.name) {
+            composable(route = CupcakeScreen.Flavor.name) {
                 val context = LocalContext.current
                 SelectOptionScreen(
                     subtotal = uiState.price,
