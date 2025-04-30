@@ -23,7 +23,10 @@
     <string name="next">Next</string>
     <string name="order_checkout">Order Checkout</string>
     <string name="start_order">Start Order</string>
+    <string name="entree_menu">Entree Menu</string>
+    <string name="side_dish">Side Dish</string>
     <string name="order_summary">Order Summary</string>
+    <string name="checkout">Checkout</string>
     <string name="subtotal">Subtotal: %s</string>
     <string name="tax">Tax: %s</string>
     <string name="total">Total: %s</string>

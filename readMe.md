@@ -1,2 +1,3 @@
 Project features
-- overrided in other branches
+
+- Navigation (navController, UpButton)
