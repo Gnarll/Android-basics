@@ -30,10 +30,10 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.Drafts
 import androidx.compose.material.icons.filled.Inbox
 import androidx.compose.material.icons.filled.Report
-import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -78,7 +78,7 @@ fun ReplyHomeScreen(
         ),
         NavigationItemContent(
             mailboxType = MailboxType.Sent,
-            icon = Icons.Default.Send,
+            icon = Icons.AutoMirrored.Filled.Send,
             text = stringResource(id = R.string.tab_sent)
         ),
         NavigationItemContent(
