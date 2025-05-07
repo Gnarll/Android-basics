@@ -5,3 +5,4 @@ Project features
 - NavigationRail (concise drawer)
 - NavigationBar (bottom nav bar)
 - Adaptive layout for different window sizes
+- Assertion on tree elements' children
