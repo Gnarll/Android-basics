@@ -13,6 +13,7 @@ class ReplyAppTest {
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
     @Test
+    @TestCompactWidth
     fun compactDevice_verifyUsingBottomNavigation() {
         val windowSize = WindowWidthSizeClass.Compact
         composeTestRule.setContent {
@@ -23,6 +24,7 @@ class ReplyAppTest {
     }
 
     @Test
+    @TestMediumWidth
     fun mediumDevice_verifyUsingNavigationRail() {
         val windowSize = WindowWidthSizeClass.Medium
         composeTestRule.setContent {
@@ -33,6 +35,7 @@ class ReplyAppTest {
     }
 
     @Test
+    @TestExpandedWidth
     fun expandedDevice_verifyUsingNavigationDrawer() {
         val windowSize = WindowWidthSizeClass.Expanded
         composeTestRule.setContent {

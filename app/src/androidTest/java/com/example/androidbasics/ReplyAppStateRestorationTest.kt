@@ -21,6 +21,7 @@ class ReplyAppStateRestorationTest {
     val composeTestRule = createAndroidComposeRule<ComponentActivity>()
 
     @Test
+    @TestCompactWidth
     fun compactDevice_configurationChangedWithSelectedEmail_selectedEmailRetained() {
         val stateRestorationTester = StateRestorationTester(composeTestRule)
         stateRestorationTester.setContent {
@@ -47,6 +48,7 @@ class ReplyAppStateRestorationTest {
     }
 
     @Test
+    @TestExpandedWidth
     fun expandedScreen_configurationChangedWithSelectedEmail_selectedEmailRetained() {
         val stateRestorationTester = StateRestorationTester(composeTestRule)
 
@@ -65,7 +67,7 @@ class ReplyAppStateRestorationTest {
         )
 
         stateRestorationTester.emulateSavedInstanceStateRestore()
-        
+
         composeTestRule.onNodeWithTagForStringId(R.string.details_screen).onChildren().assertAny(
             hasAnyDescendant(hasText(composeTestRule.activity.getString(LocalEmailsDataProvider.allEmails[2].body)))
         )
