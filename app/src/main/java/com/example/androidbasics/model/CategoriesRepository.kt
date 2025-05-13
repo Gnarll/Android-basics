@@ -8,6 +8,7 @@ class CategoriesRepository {
             return listOf(
                 Category(
                     name = R.string.category_name_1, // Restaurants
+                    image = R.drawable.image_plug,
                     recommendedPlaces = listOf(
                         RecommendedPlace(
                             name = R.string.category_name_1_recommended_place_name_1,
@@ -63,6 +64,7 @@ class CategoriesRepository {
                 ),
                 Category(
                     name = R.string.category_name_2, // Cinemas
+                    image = R.drawable.image_plug,
                     recommendedPlaces = listOf(
                         RecommendedPlace(
                             name = R.string.category_name_2_recommended_place_name_1,
@@ -93,6 +95,7 @@ class CategoriesRepository {
                 ),
                 Category(
                     name = R.string.category_name_3, // Parks
+                    image = R.drawable.image_plug,
                     recommendedPlaces = listOf(
                         RecommendedPlace(
                             name = R.string.category_name_3_recommended_place_name_1,
@@ -128,6 +131,7 @@ class CategoriesRepository {
                 ),
                 Category(
                     name = R.string.category_name_4, // Shopping Malls
+                    image = R.drawable.image_plug,
                     recommendedPlaces = listOf(
                         RecommendedPlace(
                             name = R.string.category_name_4_recommended_place_name_1,
@@ -158,6 +162,7 @@ class CategoriesRepository {
                 ),
                 Category(
                     name = R.string.category_name_5, // Museums
+                    image = R.drawable.image_plug,
                     recommendedPlaces = listOf(
                         RecommendedPlace(
                             name = R.string.category_name_5_recommended_place_name_1,
