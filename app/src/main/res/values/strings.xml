@@ -1,3 +1,86 @@
 <resources>
     <string name="app_name">Android basics</string>
+
+    <string name="home_screen_title">City</string>
+    <string name="recommended_place_screen_title">Recommended place</string>
+
+    <string name="category_name_1">Restaurants</string>
+    <string name="category_name_1_recommended_place_name_1">Italian Corner</string>
+    <string name="category_name_1_recommended_place_name_2">Seafood Delight</string>
+    <string name="category_name_1_recommended_place_name_3">Grill Bar "Flame"</string>
+    <string name="category_name_1_recommended_place_name_4">Vegan Cafe "Green Leaf"</string>
+    <string name="category_name_1_recommended_place_name_5">Sushi Bar "Tokyo"</string>
+    <string name="category_name_1_recommended_place_name_6">Burger Joint "Main Burger"</string>
+    <string name="category_name_1_recommended_place_name_7">Beer Restaurant "Hops"</string>
+    <string name="category_name_1_recommended_place_name_8">Dessert Cafe "Sweet Tooth"</string>
+    <string name="category_name_1_recommended_place_name_9">Steakhouse "Bull"</string>
+    <string name="category_name_1_recommended_place_name_10">Pan-Asian Cuisine "Dragon"</string>
+
+    <string name="category_name_1_recommended_place_article_1">A cozy Italian trattoria serving authentic pasta, wood-fired pizzas, and fine wines. Perfect for romantic dinners or family gatherings.</string>
+    <string name="category_name_1_recommended_place_article_2">Fresh oysters, grilled salmon, and seafood platters in a nautical-themed setting. Known for its daily catches and waterfront views.</string>
+    <string name="category_name_1_recommended_place_article_3">Sizzling steaks, ribs, and kebabs cooked over an open flame. Lively atmosphere with live music on weekends.</string>
+    <string name="category_name_1_recommended_place_article_4">Plant-based dishes made from locally sourced ingredients. Try their signature avocado burger or cashew cheesecake.</string>
+    <string name="category_name_1_recommended_place_article_5">Elegant sushi bar offering omakase menus, sashimi platters, and sake pairings. Minimalist décor with a Zen garden.</string>
+    <string name="category_name_1_recommended_place_article_6">Gourmet burgers with craft beers and loaded fries. Features a build-your-own-burger bar and retro arcade games.</string>
+    <string name="category_name_1_recommended_place_article_7">Rustic pub with 50+ craft beers on tap and hearty German-inspired dishes like schnitzel and pretzels.</string>
+    <string name="category_name_1_recommended_place_article_8">Homemade cakes, macarons, and artisanal coffee in a pastel-colored café. Famous for its rainbow crepe cakes.</string>
+    <string name="category_name_1_recommended_place_article_9">Premium dry-aged steaks and Wagyu beef cuts. Dim lighting and leather booths create a classic steakhouse vibe.</string>
+    <string name="category_name_1_recommended_place_article_10">Spicy Thai curries, Vietnamese pho, and dim sum served in a lantern-lit space. Don’t miss their dragon-themed cocktails.</string>
+
+
+    <string name="category_name_2">Cinemas</string>
+    <string name="category_name_2_recommended_place_name_1">Star Cinema</string>
+    <string name="category_name_2_recommended_place_name_2">IMAX "Cosmos"</string>
+    <string name="category_name_2_recommended_place_name_3">Art Theater "Film"</string>
+    <string name="category_name_2_recommended_place_name_4">Retro Cinema</string>
+    <string name="category_name_2_recommended_place_name_5">Movie Cafe "Couch"</string>
+
+    <string name="category_name_2_recommended_place_article_1">State-of-the-art multiplex with 15 screens, Dolby Atmos sound, and VIP lounges. Hosts frequent film festivals.</string>
+    <string name="category_name_2_recommended_place_article_2">Giant IMAX screen with 3D blockbusters and documentaries. Features a space-themed lobby with astronaut exhibits.</string>
+    <string name="category_name_2_recommended_place_article_3">Indie films, foreign cinema, and director Q&amp;A nights. Intimate setting with vintage film reels on display.</string>
+    <string name="category_name_2_recommended_place_article_4">Nostalgic single-screen theater showing classic movies from the 80s and 90s. Includes a retro candy bar.</string>
+    <string name="category_name_2_recommended_place_article_5">Comfy sofas and blankets for a home-like experience. Order pizzas and cocktails while watching cult favorites.</string>
+
+    <string name="category_name_3">Parks</string>
+    <string name="category_name_3_recommended_place_name_1">Central Park</string>
+    <string name="category_name_3_recommended_place_name_2">Botanical Garden</string>
+    <string name="category_name_3_recommended_place_name_3">Amusement Park "Joyland"</string>
+    <string name="category_name_3_recommended_place_name_4">Water Park "Aqua World"</string>
+    <string name="category_name_3_recommended_place_name_5">Pine Forest Park</string>
+    <string name="category_name_3_recommended_place_name_6">Sculpture Park "Art Landscape"</string>
+
+    <string name="category_name_3_recommended_place_article_1">Lush green space with walking trails, paddleboat rentals, and open-air concerts in summer. Iconic fountain at the center.</string>
+    <string name="category_name_3_recommended_place_article_2">Over 5,000 plant species, tropical greenhouses, and guided tours. The rose garden is a photo hotspot.</string>
+    <string name="category_name_3_recommended_place_article_3">Thrill rides, roller coasters, and carnival games for all ages. Nighttime light shows during holidays.</string>
+    <string name="category_name_3_recommended_place_article_4">Wave pools, lazy rivers, and water slides. Tropical-themed with cabana rentals and swim-up bars.</string>
+    <string name="category_name_3_recommended_place_article_5">Serene pine forest with hiking trails and birdwatching spots. Camping allowed in designated areas.</string>
+    <string name="category_name_3_recommended_place_article_6">Open-air gallery with 50+ modern sculptures. Free admission and guided art walks every Sunday.</string>
+
+    <string name="category_name_4">Shopping Malls</string>
+    <string name="category_name_4_recommended_place_name_1">Megamall "Galaxy"</string>
+    <string name="category_name_4_recommended_place_name_2">City Plaza</string>
+    <string name="category_name_4_recommended_place_name_3">Outlet "Style"</string>
+    <string name="category_name_4_recommended_place_name_4">Ocean Mall</string>
+    <string name="category_name_4_recommended_place_name_5">Boutique Center "Golden"</string>
+
+    <string name="category_name_4_recommended_place_article_1">Massive mall with 300+ stores, an ice rink, and a rooftop observatory. The food court offers global cuisines.</string>
+    <string name="category_name_4_recommended_place_article_2">Upscale shopping with luxury brands, a spa, and a glass-domed atrium. Hosts fashion shows monthly.</string>
+    <string name="category_name_4_recommended_place_article_3">Discount designer outlets with year-round sales. Outdoor layout with food trucks and picnic areas.</string>
+    <string name="category_name_4_recommended_place_article_4">Beachfront mall with surf shops, seafood restaurants, and sunset views from the terrace.</string>
+    <string name="category_name_4_recommended_place_article_5">Exclusive boutiques selling jewelry, haute couture, and limited-edition sneakers. Champagne bar on-site.</string>
+
+    <string name="category_name_5">Museums</string>
+    <string name="category_name_5_recommended_place_name_1">Local History Museum</string>
+    <string name="category_name_5_recommended_place_name_2">Modern Art Museum</string>
+    <string name="category_name_5_recommended_place_name_3">Interactive Science Museum</string>
+    <string name="category_name_5_recommended_place_name_4">City History Museum</string>
+    <string name="category_name_5_recommended_place_name_5">Art Gallery</string>
+    <string name="category_name_5_recommended_place_name_6">Military Tech Museum</string>
+
+    <string name="category_name_5_recommended_place_article_1">Exhibits on regional history, from prehistoric fossils to WWII artifacts. Free admission on Tuesdays.</string>
+    <string name="category_name_5_recommended_place_article_2">Avant-garde installations and rotating exhibits by emerging artists. Interactive digital art zone.</string>
+    <string name="category_name_5_recommended_place_article_3">Hands-on science experiments, planetarium shows, and a giant Tesla coil demonstration.</string>
+    <string name="category_name_5_recommended_place_article_4">Timeline of the city’s growth, including a replica 19th-century street and vintage tram rides.</string>
+    <string name="category_name_5_recommended_place_article_5">Permanent collection of Renaissance paintings and temporary exhibits by contemporary photographers.</string>
+    <string name="category_name_5_recommended_place_article_6">Tanks, fighter jets, and military uniforms. Kids can climb into a decommissioned helicopter.</string>
 </resources>
