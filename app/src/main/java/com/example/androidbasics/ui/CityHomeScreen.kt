@@ -36,7 +36,7 @@ fun CityHomeScreen(
     CategoriesList(
         categories = categories,
         onCategoryClick = onCategoryClick,
-        contentPadding = 10.dp,
+        contentPadding = dimensionResource(R.dimen.padding_small),
         modifier = modifier
     )
 }
