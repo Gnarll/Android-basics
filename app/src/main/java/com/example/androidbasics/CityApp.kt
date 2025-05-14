@@ -63,7 +63,6 @@ fun CityApp(
             startDestination = CityAppScreen.Home.name,
             modifier = Modifier
                 .padding(paddingValues)
-                .statusBarsPadding()
         ) {
             composable(route = CityAppScreen.Home.name) {
                 CityHomeScreen(
