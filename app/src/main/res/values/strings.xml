@@ -3,6 +3,7 @@
 
     <string name="home_screen_title">City</string>
     <string name="recommended_place_screen_title">Recommended place</string>
+    <string name="back">Back</string>
 
     <string name="category_name_1">Restaurants</string>
     <string name="category_name_1_recommended_place_name_1">Italian Corner</string>
