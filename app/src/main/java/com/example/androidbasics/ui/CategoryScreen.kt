@@ -83,7 +83,7 @@ fun RecommendationItem(
         ) {
             Image(
                 painter = painterResource(recommendedPlace.image),
-                contentDescription = stringResource(recommendedPlace.name),
+                contentDescription = null,
                 contentScale = ContentScale.Fit,
                 modifier = Modifier.width(dimensionResource(R.dimen.medium_image_size))
             )
