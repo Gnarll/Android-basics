@@ -3,7 +3,6 @@ package com.example.androidbasics
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -48,12 +47,26 @@ fun CityApp(
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen =
         CityAppScreen.valueOf(backStackEntry?.destination?.route ?: CityAppScreen.Home.name)
-    val prevBackStackEntry = navController.previousBackStackEntry
     val cityUiState by viewModel.cityUiState.collectAsState()
+    val prevBackStackEntry = navController.previousBackStackEntry
 
+    var categoryScreenTitle: String
+    var recommendedPlaceScreenTitle: String
+
+    with(cityUiState) {
+        categoryScreenTitle =
+            if (currentCategory?.name != null) stringResource(currentCategory.name) else CityAppScreen.Category.name
+        recommendedPlaceScreenTitle =
+            if (currentRecommendedPlace?.name != null) stringResource(currentRecommendedPlace.name) else CityAppScreen.RecommendedPlace.name
+    }
+ 
     Scaffold(topBar = {
         CityAppTopBar(
-            cityAppScreen = currentScreen,
+            title = when (currentScreen) {
+                CityAppScreen.Category -> categoryScreenTitle
+                CityAppScreen.RecommendedPlace -> recommendedPlaceScreenTitle
+                else -> stringResource(currentScreen.title)
+            },
             canNavigateBack = prevBackStackEntry != null,
             navigateBack = { navController.popBackStack() })
     }) { paddingValues ->
@@ -93,13 +106,13 @@ fun CityApp(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CityAppTopBar(
-    cityAppScreen: CityAppScreen,
+    title: String,
     canNavigateBack: Boolean,
     navigateBack: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     TopAppBar(title = {
-        Text(text = stringResource(cityAppScreen.title))
+        Text(text = title)
     }, navigationIcon = {
         if (canNavigateBack) {
             IconButton(onClick = navigateBack) {
