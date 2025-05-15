@@ -1,7 +1,6 @@
 package com.example.androidbasics
 
 import androidx.annotation.StringRes
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -59,7 +58,7 @@ fun CityApp(
         recommendedPlaceScreenTitle =
             if (currentRecommendedPlace?.name != null) stringResource(currentRecommendedPlace.name) else CityAppScreen.RecommendedPlace.name
     }
- 
+
     Scaffold(topBar = {
         CityAppTopBar(
             title = when (currentScreen) {
@@ -81,9 +80,9 @@ fun CityApp(
                 CityHomeScreen(
                     categories = cityUiState.categories,
                     onCategoryClick = { category ->
-                        viewModel.setCurrentCategory(category) // can we change them
+                        viewModel.setCurrentCategory(category)
                         navController.navigate(route = CityAppScreen.Category.name)
-                    }, modifier = Modifier.fillMaxWidth()
+                    }
                 )
             }
             composable(route = CityAppScreen.Category.name) {
