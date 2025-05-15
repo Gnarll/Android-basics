@@ -82,7 +82,7 @@ fun CategoryItem(
         ) {
             Image(
                 painter = painterResource(category.image),
-                contentDescription = stringResource(category.name),
+                contentDescription = null,
                 contentScale = ContentScale.Fit,
                 modifier = Modifier.width(dimensionResource(R.dimen.medium_image_size))
             )
