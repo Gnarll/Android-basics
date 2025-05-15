@@ -2,201 +2,202 @@ package com.example.androidbasics.model
 
 import com.example.androidbasics.R
 
-class CategoriesRepository {
-    companion object {
-        fun getCategories(): List<Category> {
-            return listOf(
-                Category(
-                    name = R.string.category_name_1, // Restaurants
+object CategoriesRepository {
+    val categories: List<Category> = listOf(
+        Category(
+            name = R.string.category_name_1, // Restaurants
+            image = R.drawable.image_plug,
+            recommendedPlaces = listOf(
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_1,
                     image = R.drawable.image_plug,
-                    recommendedPlaces = listOf(
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_1,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_1
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_2,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_2
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_3,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_3
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_4,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_4
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_5,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_5
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_6,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_6
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_7,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_7
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_8,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_8
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_9,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_9
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_1_recommended_place_name_10,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_1_recommended_place_article_10
-                        )
-                    )
+                    article = R.string.category_name_1_recommended_place_article_1
                 ),
-                Category(
-                    name = R.string.category_name_2, // Cinemas
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_2,
                     image = R.drawable.image_plug,
-                    recommendedPlaces = listOf(
-                        RecommendedPlace(
-                            name = R.string.category_name_2_recommended_place_name_1,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_2_recommended_place_article_1
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_2_recommended_place_name_2,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_2_recommended_place_article_2
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_2_recommended_place_name_3,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_2_recommended_place_article_3
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_2_recommended_place_name_4,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_2_recommended_place_article_4
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_2_recommended_place_name_5,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_2_recommended_place_article_5
-                        )
-                    )
+                    article = R.string.category_name_1_recommended_place_article_2
                 ),
-                Category(
-                    name = R.string.category_name_3, // Parks
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_3,
                     image = R.drawable.image_plug,
-                    recommendedPlaces = listOf(
-                        RecommendedPlace(
-                            name = R.string.category_name_3_recommended_place_name_1,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_3_recommended_place_article_1
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_3_recommended_place_name_2,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_3_recommended_place_article_2
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_3_recommended_place_name_3,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_3_recommended_place_article_3
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_3_recommended_place_name_4,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_3_recommended_place_article_4
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_3_recommended_place_name_5,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_3_recommended_place_article_5
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_3_recommended_place_name_6,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_3_recommended_place_article_6
-                        )
-                    )
+                    article = R.string.category_name_1_recommended_place_article_3
                 ),
-                Category(
-                    name = R.string.category_name_4, // Shopping Malls
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_4,
                     image = R.drawable.image_plug,
-                    recommendedPlaces = listOf(
-                        RecommendedPlace(
-                            name = R.string.category_name_4_recommended_place_name_1,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_4_recommended_place_article_1
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_4_recommended_place_name_2,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_4_recommended_place_article_2
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_4_recommended_place_name_3,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_4_recommended_place_article_3
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_4_recommended_place_name_4,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_4_recommended_place_article_4
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_4_recommended_place_name_5,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_4_recommended_place_article_5
-                        )
-                    )
+                    article = R.string.category_name_1_recommended_place_article_4
                 ),
-                Category(
-                    name = R.string.category_name_5, // Museums
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_5,
                     image = R.drawable.image_plug,
-                    recommendedPlaces = listOf(
-                        RecommendedPlace(
-                            name = R.string.category_name_5_recommended_place_name_1,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_5_recommended_place_article_1
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_5_recommended_place_name_2,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_5_recommended_place_article_2
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_5_recommended_place_name_3,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_5_recommended_place_article_3
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_5_recommended_place_name_4,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_5_recommended_place_article_4
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_5_recommended_place_name_5,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_5_recommended_place_article_5
-                        ),
-                        RecommendedPlace(
-                            name = R.string.category_name_5_recommended_place_name_6,
-                            image = R.drawable.image_plug,
-                            article = R.string.category_name_5_recommended_place_article_6
-                        )
-                    )
+                    article = R.string.category_name_1_recommended_place_article_5
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_6,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_1_recommended_place_article_6
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_7,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_1_recommended_place_article_7
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_8,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_1_recommended_place_article_8
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_9,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_1_recommended_place_article_9
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_1_recommended_place_name_10,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_1_recommended_place_article_10
                 )
             )
-        }
+        ),
+        Category(
+            name = R.string.category_name_2, // Cinemas
+            image = R.drawable.image_plug,
+            recommendedPlaces = listOf(
+                RecommendedPlace(
+                    name = R.string.category_name_2_recommended_place_name_1,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_2_recommended_place_article_1
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_2_recommended_place_name_2,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_2_recommended_place_article_2
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_2_recommended_place_name_3,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_2_recommended_place_article_3
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_2_recommended_place_name_4,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_2_recommended_place_article_4
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_2_recommended_place_name_5,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_2_recommended_place_article_5
+                )
+            )
+        ),
+        Category(
+            name = R.string.category_name_3, // Parks
+            image = R.drawable.image_plug,
+            recommendedPlaces = listOf(
+                RecommendedPlace(
+                    name = R.string.category_name_3_recommended_place_name_1,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_3_recommended_place_article_1
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_3_recommended_place_name_2,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_3_recommended_place_article_2
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_3_recommended_place_name_3,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_3_recommended_place_article_3
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_3_recommended_place_name_4,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_3_recommended_place_article_4
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_3_recommended_place_name_5,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_3_recommended_place_article_5
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_3_recommended_place_name_6,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_3_recommended_place_article_6
+                )
+            )
+        ),
+        Category(
+            name = R.string.category_name_4, // Shopping Malls
+            image = R.drawable.image_plug,
+            recommendedPlaces = listOf(
+                RecommendedPlace(
+                    name = R.string.category_name_4_recommended_place_name_1,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_4_recommended_place_article_1
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_4_recommended_place_name_2,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_4_recommended_place_article_2
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_4_recommended_place_name_3,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_4_recommended_place_article_3
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_4_recommended_place_name_4,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_4_recommended_place_article_4
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_4_recommended_place_name_5,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_4_recommended_place_article_5
+                )
+            )
+        ),
+        Category(
+            name = R.string.category_name_5, // Museums
+            image = R.drawable.image_plug,
+            recommendedPlaces = listOf(
+                RecommendedPlace(
+                    name = R.string.category_name_5_recommended_place_name_1,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_5_recommended_place_article_1
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_5_recommended_place_name_2,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_5_recommended_place_article_2
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_5_recommended_place_name_3,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_5_recommended_place_article_3
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_5_recommended_place_name_4,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_5_recommended_place_article_4
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_5_recommended_place_name_5,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_5_recommended_place_article_5
+                ),
+                RecommendedPlace(
+                    name = R.string.category_name_5_recommended_place_name_6,
+                    image = R.drawable.image_plug,
+                    article = R.string.category_name_5_recommended_place_article_6
+                )
+            )
+        )
+    )
+
+    object Defaults {
+        val category = categories[0]
+        val recommendedPlace = category.recommendedPlaces[0]
     }
 }

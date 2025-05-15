@@ -6,7 +6,7 @@ import com.example.androidbasics.model.RecommendedPlace
 
 
 data class CityUiState(
-    val categories: List<Category> = CategoriesRepository.getCategories(),
-    val currentCategory: Category? = null,
-    val currentRecommendedPlace: RecommendedPlace? = null
+    val categories: List<Category> = CategoriesRepository.categories,
+    val currentCategory: Category = CategoriesRepository.Defaults.category,
+    val currentRecommendedPlace: RecommendedPlace = CategoriesRepository.Defaults.recommendedPlace
 )
