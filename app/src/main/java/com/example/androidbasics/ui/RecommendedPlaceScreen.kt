@@ -49,13 +49,13 @@ fun RecommendedPlaceItemExtended(
 @Preview(showBackground = true)
 @Composable
 fun RecommendedPlaceScreenPreview() {
-    RecommendedPlaceScreen(CategoriesRepository.getCategories().first().recommendedPlaces.first())
+    RecommendedPlaceScreen(CategoriesRepository.Defaults.recommendedPlace)
 }
 
 @Preview(showBackground = true)
 @Composable
 fun RecommendedPlaceItemExtendedPreview() {
     RecommendedPlaceItemExtended(
-        CategoriesRepository.getCategories().first().recommendedPlaces.first()
+        CategoriesRepository.Defaults.recommendedPlace
     )
 }

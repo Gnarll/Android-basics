@@ -99,6 +99,6 @@ fun RecommendationItem(
 @Composable
 fun CategoryScreenPreview() {
     CategoryScreen(
-        category = CategoriesRepository.getCategories().first(),
+        category = CategoriesRepository.Defaults.category,
         onRecommendedPlaceClick = {})
 }

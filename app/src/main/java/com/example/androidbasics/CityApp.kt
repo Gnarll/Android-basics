@@ -29,6 +29,7 @@ import com.example.androidbasics.ui.CityHomeScreen
 import com.example.androidbasics.ui.CityViewModel
 import com.example.androidbasics.ui.RecommendedPlaceScreen
 import com.example.androidbasics.ui.theme.AndroidBasicsTheme
+import com.example.androidbasics.ui.utils.CityContentType
 
 enum class CityAppScreen(@StringRes val title: Int) {
     Home(title = R.string.home_screen_title),
@@ -51,12 +52,32 @@ fun CityApp(
 
     var categoryScreenTitle: String
     var recommendedPlaceScreenTitle: String
-
     with(cityUiState) {
         categoryScreenTitle =
             if (currentCategory?.name != null) stringResource(currentCategory.name) else CityAppScreen.Category.name
         recommendedPlaceScreenTitle =
             if (currentRecommendedPlace?.name != null) stringResource(currentRecommendedPlace.name) else CityAppScreen.RecommendedPlace.name
+    }
+
+
+    val contentType: CityContentType
+
+    when (windowSizeWidth) {
+        WindowWidthSizeClass.COMPACT -> {
+            contentType = CityContentType.LIST_ONLY
+        }
+
+        WindowWidthSizeClass.MEDIUM -> {
+            contentType = CityContentType.LIST_ONLY
+        }
+
+        WindowWidthSizeClass.EXPANDED -> {
+            contentType = CityContentType.LIST_AND_DETAIL
+        }
+
+        else -> {
+            contentType = CityContentType.LIST_ONLY
+        }
     }
 
     Scaffold(topBar = {
@@ -78,16 +99,23 @@ fun CityApp(
         ) {
             composable(route = CityAppScreen.Home.name) {
                 CityHomeScreen(
-                    categories = cityUiState.categories,
-                    onCategoryClick = { category ->
+                    cityUiState = cityUiState,
+                    setCategory = { category ->
                         viewModel.setCurrentCategory(category)
+                    },
+                    navigateToCategory = {
                         navController.navigate(route = CityAppScreen.Category.name)
-                    }
+                    },
+                    onRecommendedPlaceClick = { recommendedPlace ->
+                        viewModel.setCurrentRecommendedPlace(recommendedPlace)
+                        navController.navigate(route = CityAppScreen.RecommendedPlace.name)
+                    },
+                    contentType = contentType
                 )
             }
             composable(route = CityAppScreen.Category.name) {
                 CategoryScreen(
-                    category = cityUiState.currentCategory!!,
+                    category = cityUiState.currentCategory,
                     onRecommendedPlaceClick = { place ->
                         viewModel.setCurrentRecommendedPlace(place = place)
                         navController.navigate(route = CityAppScreen.RecommendedPlace.name)
