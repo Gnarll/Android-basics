@@ -53,10 +53,9 @@ fun CityApp(
     var categoryScreenTitle: String
     var recommendedPlaceScreenTitle: String
     with(cityUiState) {
-        categoryScreenTitle =
-            if (currentCategory?.name != null) stringResource(currentCategory.name) else CityAppScreen.Category.name
+        categoryScreenTitle = stringResource(currentCategory.name)
         recommendedPlaceScreenTitle =
-            if (currentRecommendedPlace?.name != null) stringResource(currentRecommendedPlace.name) else CityAppScreen.RecommendedPlace.name
+            stringResource(currentRecommendedPlace.name)
     }
 
 
@@ -122,7 +121,10 @@ fun CityApp(
                     })
             }
             composable(route = CityAppScreen.RecommendedPlace.name) {
-                RecommendedPlaceScreen(recommendedPlace = cityUiState.currentRecommendedPlace!!)
+                RecommendedPlaceScreen(
+                    recommendedPlace = cityUiState.currentRecommendedPlace,
+                    contentType = contentType
+                )
             }
         }
 
