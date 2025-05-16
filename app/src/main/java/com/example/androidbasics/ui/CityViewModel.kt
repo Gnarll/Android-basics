@@ -14,7 +14,10 @@ class CityViewModel : ViewModel() {
 
     fun setCurrentCategory(category: Category) {
         _cityUiState.update { currentState ->
-            currentState.copy(currentCategory = category)
+            currentState.copy(
+                currentCategory = category,
+                currentRecommendedPlace = category.recommendedPlaces.first()
+            )
         }
     }
 
