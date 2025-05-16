@@ -114,11 +114,16 @@ fun CityApp(
             }
             composable(route = CityAppScreen.Category.name) {
                 CategoryScreen(
-                    category = cityUiState.currentCategory,
-                    onRecommendedPlaceClick = { place ->
+                    cityUiState = cityUiState,
+                    contentType = contentType,
+                    setRecommendedPlace = { place ->
                         viewModel.setCurrentRecommendedPlace(place = place)
+                    },
+                    navigateToCategory = {
                         navController.navigate(route = CityAppScreen.RecommendedPlace.name)
-                    })
+                    },
+                )
+
             }
             composable(route = CityAppScreen.RecommendedPlace.name) {
                 RecommendedPlaceScreen(

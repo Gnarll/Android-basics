@@ -46,7 +46,8 @@ fun CityHomeScreen(
             categories = cityUiState.categories,
             selectedCategory = cityUiState.currentCategory,
             onCategoryClick = setCategory,
-            onRecommendedPlaceClick = onRecommendedPlaceClick
+            onRecommendedPlaceClick = onRecommendedPlaceClick,
+            modifier = modifier.padding(dimensionResource(R.dimen.padding_small))
         )
     } else {
         CategoriesList(
