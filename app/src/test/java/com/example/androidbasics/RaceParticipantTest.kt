@@ -13,21 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androidbasics.ui.theme
+package com.example.androidbasics
 
-import androidx.compose.material3.Typography
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
+import com.example.androidbasics.ui.RaceParticipant
 
-// Set of Material typography styles to start with
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+class RaceParticipantTest {
+    private val raceParticipant = RaceParticipant(
+        name = "Test",
+        maxProgress = 100,
+        progressDelayMillis = 500L,
+        initialProgress = 0,
+        progressIncrement = 1
     )
-)
+}
