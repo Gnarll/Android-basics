@@ -15,9 +15,12 @@
  */
 package com.example.androidbasics.ui
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.delay
 
 /**
  * This class represents a state holder for race participant.
@@ -37,8 +40,26 @@ class RaceParticipant(
     /**
      * Indicates the race participant's current progress
      */
-    var currentProgress by mutableStateOf(initialProgress)
-        private set
+    private var _currentProgress by mutableStateOf(initialProgress)
+
+    var currentProgress: Int
+        get() = _currentProgress
+        private set(value) {
+            _currentProgress = value.coerceAtMost(100)
+        }
+
+
+    suspend fun run() {
+        try {
+            while (currentProgress < maxProgress) {
+                delay(progressDelayMillis)
+                currentProgress += progressIncrement
+            }
+
+        } catch (e: CancellationException) {
+            Log.i("RaceParticipant", "$name: $e")
+        }
+    }
 
     /**
      * Regardless of the value of [initialProgress] the reset function will reset the
