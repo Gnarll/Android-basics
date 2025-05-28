@@ -45,7 +45,7 @@ class RaceParticipant(
     var currentProgress: Int
         get() = _currentProgress
         private set(value) {
-            _currentProgress = value.coerceAtMost(100)
+            _currentProgress = value.coerceAtMost(maxProgress)
         }
 
 
