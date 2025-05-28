@@ -1,2 +1,4 @@
 Project features
-- overrided in other branches
+
+- coroutines (launch, coroutineScope)
+- LaunchedEffect composable
