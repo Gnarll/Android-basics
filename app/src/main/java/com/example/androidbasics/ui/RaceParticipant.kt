@@ -15,7 +15,6 @@
  */
 package com.example.androidbasics.ui
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -57,7 +56,6 @@ class RaceParticipant(
             }
 
         } catch (e: CancellationException) {
-            Log.i("RaceParticipant", "$name: $e")
         }
     }
 
