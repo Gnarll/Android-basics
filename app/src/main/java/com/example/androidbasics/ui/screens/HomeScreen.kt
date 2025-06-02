@@ -43,7 +43,7 @@ fun HomeScreen(
     when (marsUiState) {
         is MarsUiState.Success ->
             ResultScreen(
-                marsUiState.photos,
+                marsUiState.photos.size.toString(),
                 modifier.padding(top = contentPadding.calculateTopPadding())
             )
 
@@ -64,6 +64,7 @@ fun ResultScreen(photos: String, modifier: Modifier = Modifier) {
         Text(text = photos)
     }
 }
+
 
 @Composable
 fun ErrorScreen(modifier: Modifier = Modifier) {
