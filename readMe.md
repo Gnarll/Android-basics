@@ -1,2 +1,4 @@
 Project features
-- overrided in other branches
+
+- Retrofit
+- permission request (android manifest, Internet)
