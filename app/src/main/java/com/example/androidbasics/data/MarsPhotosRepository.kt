@@ -1,14 +1,15 @@
 package com.example.androidbasics.data
 
-import com.example.androidbasics.network.MarsApi
+import com.example.androidbasics.network.MarsApiService
 import com.example.androidbasics.network.MarsPhoto
 
 interface MarsPhotosRepository {
-    suspend fun getPhotos(): List<MarsPhoto>
+    suspend fun getMarsPhotos(): List<MarsPhoto>
 }
 
-class NetworkMarsPhotosRepository : MarsPhotosRepository {
-    override suspend fun getPhotos(): List<MarsPhoto> {
-        return MarsApi.retrofitService.getPhotos()
+class NetworkMarsPhotosRepository(private val marsApiService: MarsApiService) :
+    MarsPhotosRepository {
+    override suspend fun getMarsPhotos(): List<MarsPhoto> {
+        return marsApiService.getPhotos()
     }
 }
