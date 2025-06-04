@@ -1,2 +1,3 @@
 Project features
-- overrided in other branches
+
+- practice after mars-photos
