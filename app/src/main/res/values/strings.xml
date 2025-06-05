@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android basics</string>
+    <string name="amphibians_title">Amphibians</string>
+    <string name="amphibians_loading_error">Amphibians</string>
 </resources>
