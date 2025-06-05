@@ -7,10 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.androidbasics.ui.AmphibiansViewModel
 import com.example.androidbasics.ui.theme.AndroidBasicsTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +22,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             AndroidBasicsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    AmphibiansApp(
+
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,17 +33,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun AmphibiansApp(modifier: Modifier = Modifier) {
+    val amphibiansViewModel: AmphibiansViewModel = viewModel(factory = AmphibiansViewModel.Factory)
+    val amphibiansUiState by amphibiansViewModel.uiState.collectAsState()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AndroidBasicsTheme {
-        Greeting("Android")
-    }
 }
