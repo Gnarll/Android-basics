@@ -7,5 +7,9 @@ import retrofit2.http.Query
 
 interface BooksApiService {
     @GET("volumes")
-    suspend fun fetchBooks(@Query("q") query: String): BooksResponse
+    suspend fun fetchBooks(
+        @Query("q") query: String,
+        @Query("maxResults") maxResults: Int = 15,
+        @Query("startIndex") startIndex: Int = 0
+    ): BooksResponse
 }

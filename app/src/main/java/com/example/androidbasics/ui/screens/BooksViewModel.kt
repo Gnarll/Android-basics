@@ -17,14 +17,16 @@ import kotlinx.coroutines.launch
 
 
 data class UiState(
-    val booksUiState: BooksUiState = BooksUiState.Loading(),
-    val searchValue: String = ""
+    val booksUiState: BooksUiState = BooksUiState.Idle,
+    val searchValue: String = "",
+    val isLoadingMore: Boolean = false
 )
 
-sealed interface BooksUiState {
-    class Success(val books: List<Book>) : BooksUiState
-    class Loading : BooksUiState
-    class Error : BooksUiState
+sealed class BooksUiState {
+    data class Success(val books: List<Book>) : BooksUiState()
+    object Loading : BooksUiState()
+    object Error : BooksUiState()
+    object Idle : BooksUiState()
 }
 
 class BooksViewModel(val booksRepository: BooksRepository) : ViewModel() {
@@ -33,25 +35,53 @@ class BooksViewModel(val booksRepository: BooksRepository) : ViewModel() {
 
     fun onChangeSearchValue(value: String) {
         _uiState.update {
-            it.copy(searchValue = value)
+            it.copy(searchValue = value.trim())
         }
     }
 
     fun onSearch() {
         viewModelScope.launch {
-            _uiState.update {
-                it.copy(
-                    booksUiState = try {
-                        val books = booksRepository.getBooks(query = _uiState.value.searchValue)
+            booksRepository.resetPagination()
+            fetchBooks(shouldAppend = false)
+        }
+    }
 
-                        BooksUiState.Success(books)
-                    } catch (e: Throwable) {
-                        BooksUiState.Error()
-                    }
-                )
+    fun loadMoreBooks() {
+        viewModelScope.launch {
+            _uiState.update { it.copy(isLoadingMore = true) }
+            try {
+                fetchBooks(shouldAppend = true)
+            } finally {
+                _uiState.update { it.copy(isLoadingMore = false) }
             }
         }
     }
+
+    private suspend fun fetchBooks(shouldAppend: Boolean) {
+        if (shouldAppend) {
+            _uiState.update { it.copy(isLoadingMore = true) }
+        } else {
+            _uiState.update { it.copy(booksUiState = BooksUiState.Loading) }
+        }
+
+        val currentBooks = (_uiState.value.booksUiState as? BooksUiState.Success)?.books.orEmpty()
+
+        val bookUiState = try {
+            val newBooks = booksRepository.fetchNextPage(query = _uiState.value.searchValue)
+            val combinedBooks = if (shouldAppend) currentBooks + newBooks else newBooks
+            BooksUiState.Success(combinedBooks)
+        } catch (e: Throwable) {
+            if (shouldAppend) BooksUiState.Success(currentBooks) else BooksUiState.Error
+        }
+
+        _uiState.update {
+            it.copy(
+                booksUiState = bookUiState,
+                isLoadingMore = false
+            )
+        }
+    }
+
 
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
