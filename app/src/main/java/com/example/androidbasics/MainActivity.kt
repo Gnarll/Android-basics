@@ -12,11 +12,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androidbasics.ui.theme.AndroidBasicsTheme
+import com.example.sqldemo.AppDatabase
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        GlobalScope.launch {
+            AppDatabase.getDatabase(applicationContext).emailDao().getAll()
+        }
+
         setContent {
             AndroidBasicsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
