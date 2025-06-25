@@ -35,6 +35,7 @@ class ItemEntryViewModel(private val itemsRepository: ItemsRepository) : ViewMod
     var itemUiState by mutableStateOf(ItemUiState())
         private set
 
+
     /**
      * Updates the [itemUiState] with the value provided in the argument. This method also triggers
      * a validation for input values.
