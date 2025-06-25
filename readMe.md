@@ -1,2 +1,5 @@
 Project features
-- overrided in other branches
+
+- Data persistence
+- @Dao, @Entity, @Database, RoomDatabase
+- Flow
