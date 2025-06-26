@@ -48,6 +48,7 @@ class ItemDaoTest {
     @Throws(IOException::class)
     fun destroyDb() {
         inventoryDatabase.close()
+
     }
 
 
@@ -66,5 +67,20 @@ class ItemDaoTest {
         val items = itemDao.getAll().first()
         assertEquals(item1, items[0])
         assertEquals(item2, items[1])
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun itemDao_UpdateItemsInDb() = runBlocking {
+        addTwoItemsToDb()
+        val item1Update = item1.copy(name = "Big apple")
+        val item2Update = item2.copy(name = "Big banana")
+
+        itemDao.update(item1Update)
+        itemDao.update(item2Update)
+
+        val allItems = itemDao.getAll().first()
+        assertEquals(allItems[0], item1Update)
+        assertEquals(allItems[1], item2Update)
     }
 }
