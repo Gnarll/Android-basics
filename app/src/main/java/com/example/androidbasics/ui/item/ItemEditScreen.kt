@@ -24,6 +24,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
@@ -34,6 +35,7 @@ import com.example.androidbasics.R
 import com.example.androidbasics.ui.AppViewModelProvider
 import com.example.androidbasics.ui.navigation.NavigationDestination
 import com.example.androidbasics.ui.theme.AndroidBasicsTheme
+import kotlinx.coroutines.launch
 
 
 object ItemEditDestination : NavigationDestination {
@@ -51,6 +53,8 @@ fun ItemEditScreen(
     modifier: Modifier = Modifier,
     viewModel: ItemEditViewModel = viewModel(factory = AppViewModelProvider.Factory)
 ) {
+    val coroutineScope = rememberCoroutineScope()
+
     Scaffold(
         topBar = {
             InventoryTopAppBar(
@@ -63,8 +67,15 @@ fun ItemEditScreen(
     ) { innerPadding ->
         ItemEntryBody(
             itemUiState = viewModel.itemUiState,
-            onItemValueChange = { },
-            onSaveClick = { },
+            onItemValueChange = {
+                viewModel.updateItemUiState(it)
+            },
+            onSaveClick = {
+                coroutineScope.launch {
+                    viewModel.saveItemToDb()
+                    navigateBack()
+                }
+            },
             modifier = Modifier
                 .padding(
                     start = innerPadding.calculateStartPadding(LocalLayoutDirection.current),
