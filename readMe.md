@@ -1,2 +1,4 @@
 Project features
-- overrided in other branches
+
+- Navigation3
+- Koin DI library in a couple with navigation
