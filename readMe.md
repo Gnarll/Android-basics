@@ -1,2 +1,3 @@
 Project features
-- overrided in other branches
+
+- My analysis of recomposition reasons, stability of arguments, etc.
