@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.androidbasics.cases.Parent6
+import com.example.androidbasics.cases.Parent7
 import com.example.androidbasics.ui.theme.AndroidBasicsTheme
 
 class MainActivity : ComponentActivity() {
@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
                             .fillMaxSize()
                     ) {
-                        Parent6()
+                        Parent7()
                     }
                 }
             }
